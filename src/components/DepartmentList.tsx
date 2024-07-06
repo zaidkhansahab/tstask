@@ -1,6 +1,6 @@
 // src/components/DepartmentList.tsx
 import React, { useState } from 'react';
-import { List, ListItem, ListItemText, Collapse, Checkbox, ListItemIcon, Box } from '@mui/material';
+import { List, ListItem, ListItemText, Collapse, Checkbox, ListItemIcon } from '@mui/material';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 interface Department {
@@ -33,8 +33,7 @@ const DepartmentList: React.FC = () => {
         ...prevSelected,
         [`${department}-${subDepartment}`]: !prevSelected[`${department}-${subDepartment}`],
       }));
-      const allSelected = departments.find(dep => dep.name === department)?.subDepartments.every(sub => selected[`${department}-${sub}`]);
-      setSelected((prevSelected) => ({ ...prevSelected, [department]: allSelected }));
+      
     } else {
       const isSelected = !selected[department];
       setSelected((prevSelected) => {

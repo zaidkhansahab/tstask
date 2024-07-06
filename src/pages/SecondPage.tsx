@@ -48,7 +48,7 @@ const SecondPage: React.FC = () => {
           Data Table
         </Typography>
         <Paper elevation={3} sx={{ height: 400, width: '100%', p: 2 }}>
-          <DataGrid rows={data} columns={columns} pageSize={5} />
+          <DataGrid rows={data} columns={columns} />
         </Paper>
       </Box>
       <Box sx={{ mt: 4 }}>
